@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-11-14T11:09:27+00:00",
+  "input_dir": "fixtures",
+  "summary": {
+    "inserted": 2,
+    "duplicate_scan": 1,
+    "needs_review": 1,
+    "files": 4
+  },
+  "records": [
+    {
+      "source_file": "invoice-101-copy.png",
+      "sha256": "0a1ab137d9830cab38378b364554f1a232466a3622b4575463551c13c8ddc1c2",
+      "extracted": {
+        "invoice_number": "TNM-101",
+        "vendor": "ACME OFFICE SUPPLIES",
+        "invoice_date": "2026-10-01",
+        "currency": "INR",
+        "subtotal": "1200.50",
+        "subtotal_paise": 120050,
+        "tax": "216.09",
+        "tax_paise": 21609,
+        "total": "1416.59",
+        "total_paise": 141659
+      },
+      "warnings": [],
+      "raw_ocr_text": "SYNTHETIC TEST INVOICE\nInvoice: TNM-101\n\nVendor: ACME OFFICE SUPPLIES\nDate: 01/10/2026\n\nCurrency: INR\n\nSubtotal: 1,200.50\n\nTax: 216.09\n\nTotal: 1,416.59\n",
+      "status": "valid",
+      "disposition": "inserted",
+      "reasons": [],
+      "invoice_id": 1,
+      "other_sources": []
+    },
+    {
+      "source_file": "invoice-101.png",
+      "sha256": "9bf161d252777f970072379dec312b080e54b1263272395dbb9ed3612c0b38ca",
+      "extracted": {
+        "invoice_number": "TNM-101",
+        "vendor": "Acme Office Supplies",
+        "invoice_date": "2026-10-01",
+        "currency": "INR",
+        "subtotal": "1200.50",
+        "subtotal_paise": 120050,
+        "tax": "216.09",
+        "tax_paise": 21609,
+        "total": "1416.59",
+        "total_paise": 141659
+      },
+      "warnings": [],
+      "raw_ocr_text": "SYNTHETIC TEST INVOICE\nInvoice: TNM-101\n\nVendor: Acme Office Supplies\nDate: 2026-10-01\n\nCurrency: INR\n\nSubtotal: 1200.50\n\nTax: 216.09\n\nTotal: 1416.59\n",
+      "status": "valid",
+      "disposition": "duplicate_scan",
+      "reasons": [],
+      "invoice_id": 1,
+      "other_sources": [
+        "invoice-101-copy.png"
+      ]
+    },
+    {
+      "source_file": "invoice-102.png",
+      "sha256": "12bd2a740feb5573ac69414f5ac1d28fe344fe3062875478dfcff64f891c531c",
+      "extracted": {
+        "invoice_number": "TNM-102",
+        "vendor": "Beta Print Studio",
+        "invoice_date": "2026-10-02",
+        "currency": "INR",
+        "subtotal": "1500.00",
+        "subtotal_paise": 150000,
+        "tax": "270.00",
+        "tax_paise": 27000,
+        "total": "1770.00",
+        "total_paise": 177000
+      },
+      "warnings": [],
+      "raw_ocr_text": "SYNTHETIC TEST INVOICE\nInvoice: TNM-102\n\nVendor: Beta Print Studio\nDate: 2026-10-02\nCurrency: INR\n\nSubtotal: 1500.00\n\nTax: 270.00\n\nTotal: 1770.00\n",
+      "status": "valid",
+      "disposition": "inserted",
+      "reasons": [],
+      "invoice_id": 2,
+      "other_sources": []
+    },
+    {
+      "source_file": "invoice-103-review.png",
+      "sha256": "220bbf4b48801265b05ea44e8a1c115a6e33714a9cf1502c9d96f97c344eb020",
+      "extracted": {
+        "invoice_number": "TNM-103",
+        "vendor": "Gamma Paper Co",
+        "invoice_date": null,
+        "currency": "INR",
+        "subtotal": "1000.00",
+        "subtotal_paise": 100000,
+        "tax": "180.00",
+        "tax_paise": 18000,
+        "total": "0.00",
+        "total_paise": 0
+      },
+      "warnings": [],
+      "raw_ocr_text": "SYNTHETIC TEST INVOICE\nInvoice: TNM-103\nVendor: Gamma Paper Co\nDate: [not supplied]\nCurrency: INR\nSubtotal: 1000.00\n\nTax: 180.00\n\nTotal: 11?0.00\n",
+      "status": "needs_review",
+      "disposition": "needs_review",
+      "reasons": [
+        "unparseable date '[not supplied]'",
+        "subtotal + tax != total (1000.00 + 180.00 != 0.00)"
+      ],
+      "invoice_id": null,
+      "other_sources": []
+    }
+  ],
+  "needs_review": [
+    {
+      "source_file": "invoice-103-review.png",
+      "status": "needs_review",
+      "reasons": [
+        "unparseable date '[not supplied]'",
+        "subtotal + tax != total (1000.00 + 180.00 != 0.00)"
+      ]
+    }
+  ]
+}

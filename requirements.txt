@@ -1,0 +1,2 @@
+# Runtime has no third-party Python dependencies (stdlib + the tesseract executable).
+pytest>=7

@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+
+# Local database
+*.db
+
+# Personal answers (do not publish)
+SUBMISSION_ANSWERS_TEMPLATE.md
+
+# Old/scratch outputs
+out/
